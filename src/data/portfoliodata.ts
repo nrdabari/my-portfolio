@@ -16,7 +16,7 @@ export type Experience = {
   end: string;
   bullets: string[];
 };
-export type SkillCategory = { name: string; items: string[] };
+export type SkillCategory = { name: string; items: any[] };
 export type Certificate = {
   title: string;
   issuer: string;
@@ -178,40 +178,147 @@ export const EXPERIENCES: Experience[] = [
 export const SKILLS: SkillCategory[] = [
   {
     name: "Languages & Core",
-    items: ["JavaScript (ES6+)", "TypeScript", "Python", "C#", ".NET"],
+    items: [
+      {
+        name: "JavaScript (ES6+)",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      },
+      {
+        name: "TypeScript",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      },
+      {
+        name: "Python",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      },
+      {
+        name: "C#",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
+      },
+      {
+        name: ".NET",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg",
+      },
+    ],
   },
   {
     name: "Frontend",
     items: [
-      "React",
-      "Next.js",
-      "HTML5",
-      "CSS3",
-      "Responsive UI",
-      "Material-UI",
-      "Tailwind CSS",
+      {
+        name: "React",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      },
+      {
+        name: "Next.js",
+        logo: "https://cdn.simpleicons.org/nextdotjs/000000",
+      },
+      {
+        name: "HTML5",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+      },
+      {
+        name: "CSS3",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+      },
+      {
+        name: "Tailwind CSS",
+        logo: "https://cdn.simpleicons.org/tailwindcss/06B6D4",
+      },
+      {
+        name: "Material-UI",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
+      },
     ],
   },
   {
     name: "Backend",
-    items: ["Node.js", "NestJS", "REST APIs", "Microservices"],
+    items: [
+      {
+        name: "Node.js",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      },
+      {
+        name: "NestJS",
+        logo: "public/nestjs.png",
+      },
+      {
+        name: "REST APIs",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+      },
+    ],
   },
-  { name: "Databases", items: ["MongoDB", "PostgreSQL", "MySQL"] },
+  {
+    name: "Databases",
+    items: [
+      {
+        name: "MongoDB",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+      },
+      {
+        name: "PostgreSQL",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+      },
+      {
+        name: "MySQL",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+      },
+    ],
+  },
   {
     name: "AI/ML",
-    items: ["OpenAI GPT", "TensorFlow", "PyTorch", "AI/ML fundamentals"],
+    items: [
+      {
+        name: "TensorFlow",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
+      },
+      {
+        name: "PyTorch",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg",
+      },
+      {
+        name: "OpenAI GPT",
+        logo: "public/chatgpt.png",
+      },
+    ],
   },
   {
     name: "Cloud & DevOps",
     items: [
-      "AWS (Lambda, RDS, S3, CloudWatch)",
-      "GCP",
-      "Docker",
-      "CI/CD",
-      "DevOps",
+      {
+        name: "AWS (Lambda, RDS, S3, CloudWatch)",
+        logo: "public/aws.png",
+      },
+      {
+        name: "GCP",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
+      },
+      {
+        name: "Docker",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+      },
+      {
+        name: "CI/CD",
+        logo: "",
+      },
     ],
   },
-  { name: "Testing & Tools", items: ["Git", "Jest", "Code Reviews"] },
+  {
+    name: "Testing & Tools",
+    items: [
+      {
+        name: "Git",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+      },
+      {
+        name: "Jest",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg",
+      },
+      {
+        name: "GitHub",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+      },
+    ],
+  },
 ];
 
 export const CONTACT = {
