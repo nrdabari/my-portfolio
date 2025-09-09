@@ -1,0 +1,14 @@
+{
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#1565c0",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "commandCenter.border": "#15202b99",
+
+    "titleBar.activeBackground": "#0d47a1",
+    "titleBar.activeForeground": "#ffffff",
+    "statusBar.background": "#0d47a1"
+  },
+  "peacock.color": "#93b337",
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
