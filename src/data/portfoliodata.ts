@@ -218,6 +218,8 @@ export const CONTACT = {
   email: "nrdabari@gmail.com",
   phone: "+91-8454885254",
   location: "Mumbai, India",
+  linkedin: "https://linkedin.com/in/nikita-dabari",
+  githubLink: "https://github.com/nrdabari",
   resumeUrl:
     "https://drive.google.com/uc?export=download&id=11hRO18XyiyF9qlbtutC0BwGaCZMCNjfG",
 } as const;

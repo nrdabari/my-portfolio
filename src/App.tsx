@@ -10,6 +10,7 @@ import {
   Briefcase,
   Download,
   Phone,
+  Copy,
 } from "lucide-react";
 import * as DATA from "./data/portfoliodata"; // ← single binding avoids local NAV/PROJECTS/CERTIFICATES identifiers
 // import ExperienceSection from "./sections/Experience";
@@ -34,6 +35,7 @@ const Section = ({
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
+  const [copied, setCopied] = useState("");
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
@@ -90,6 +92,13 @@ export default function App() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  };
+
+  const copyToClipboard = (text: string, label: string) => {
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(label);
+      setTimeout(() => setCopied(""), 1500); // reset after 1.5 sec
+    });
   };
 
   return (
@@ -208,6 +217,8 @@ export default function App() {
                 href="https://github.com/nrdabari"
                 aria-label="GitHub"
                 className="text-neutral-400 hover:text-white transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Github size={22} />
               </a>
@@ -215,6 +226,8 @@ export default function App() {
                 href="https://linkedin.com/in/nikita-dabari"
                 aria-label="LinkedIn"
                 className="text-neutral-400 hover:text-white transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Linkedin size={22} />
               </a>
@@ -222,6 +235,8 @@ export default function App() {
                 href="mailto:your.email@example.com"
                 aria-label="Email"
                 className="text-neutral-400 hover:text-white transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Mail size={22} />
               </a>
@@ -385,6 +400,8 @@ export default function App() {
                           key={i}
                           href={g.url}
                           className="inline-flex items-center gap-1 text-sm text-neutral-300 hover:text-white"
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
                           <Github size={16} /> {g.label}
                         </a>
@@ -393,6 +410,8 @@ export default function App() {
                       <a
                         href={p.live}
                         className="inline-flex items-center gap-1 text-sm text-neutral-300 hover:text-white"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <ExternalLink size={16} /> Live
                       </a>
@@ -426,7 +445,16 @@ export default function App() {
                 className="text-indigo-300 mb-3 mx-auto md:mx-0"
                 size={26}
               />
-              <h3 className="font-semibold">Email</h3>
+              <h3 className="font-semibold flex items-center gap-2">
+                Email
+                <button
+                  onClick={() => copyToClipboard(DATA.CONTACT.email, "Email")}
+                  className="text-xs px-2 py-1 rounded bg-white/10 hover:bg-white/20"
+                >
+                  {copied === "Email" ? "Copied!" : <Copy size={14} />}
+                </button>
+              </h3>
+
               <p className="text-neutral-300 text-sm">{DATA.CONTACT.email}</p>
             </div>
             {/* Phone */}
@@ -435,7 +463,15 @@ export default function App() {
                 className="text-green-300 mb-3 mx-auto md:mx-0"
                 size={26}
               />
-              <h3 className="font-semibold">Call</h3>
+              <h3 className="font-semibold flex items-center gap-2">
+                Call
+                <button
+                  onClick={() => copyToClipboard(DATA.CONTACT.phone, "Phone")}
+                  className="text-xs px-2 py-1 rounded bg-white/10 hover:bg-white/20"
+                >
+                  {copied === "Phone" ? "Copied!" : <Copy size={14} />}
+                </button>
+              </h3>
               <p className="text-neutral-300 text-sm">{DATA.CONTACT.phone}</p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
@@ -443,7 +479,18 @@ export default function App() {
                 className="text-sky-300 mb-3 mx-auto md:mx-0"
                 size={26}
               />
-              <h3 className="font-semibold">LinkedIn</h3>
+
+              <h3 className="font-semibold flex items-center gap-2">
+                LinkedIn
+                <button
+                  onClick={() =>
+                    copyToClipboard(DATA.CONTACT.linkedin, "LinkedIn")
+                  }
+                  className="text-xs px-2 py-1 rounded bg-white/10 hover:bg-white/20"
+                >
+                  {copied === "LinkedIn" ? "Copied!" : <Copy size={14} />}
+                </button>
+              </h3>
               <p className="text-neutral-300 text-sm">
                 linkedin.com/in/nikita-dabari
               </p>
@@ -453,7 +500,18 @@ export default function App() {
                 className="text-neutral-300 mb-3 mx-auto md:mx-0"
                 size={26}
               />
-              <h3 className="font-semibold">GitHub</h3>
+
+              <h3 className="font-semibold flex items-center gap-2">
+                GitHub
+                <button
+                  onClick={() =>
+                    copyToClipboard(DATA.CONTACT.githubLink, "GitHub")
+                  }
+                  className="text-xs px-2 py-1 rounded bg-white/10 hover:bg-white/20"
+                >
+                  {copied === "GitHub" ? "Copied!" : <Copy size={14} />}
+                </button>
+              </h3>
               <p className="text-neutral-300 text-sm">github.com/nrdabari</p>
             </div>
           </div>
@@ -483,16 +541,20 @@ export default function App() {
           </p>
           <div className="flex items-center gap-5">
             <a
-              href="https://github.com/nrdabari"
+              href={DATA.CONTACT.githubLink}
               aria-label="GitHub"
               className="text-neutral-400 hover:text-white"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Github size={18} />
             </a>
             <a
-              href="https://linkedin.com/in/nikita-dabari"
+              href={DATA.CONTACT.linkedin}
               aria-label="LinkedIn"
               className="text-neutral-400 hover:text-white"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Linkedin size={18} />
             </a>
@@ -500,6 +562,8 @@ export default function App() {
               href="mailto:nrdabari@gmail.com"
               aria-label="Email"
               className="text-neutral-400 hover:text-white"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Mail size={18} />
             </a>
