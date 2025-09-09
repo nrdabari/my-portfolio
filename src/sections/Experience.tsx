@@ -1,4 +1,3 @@
-import React from "react";
 import { EXPERIENCES } from "../data/portfoliodata";
 
 export default function ExperienceSection() {

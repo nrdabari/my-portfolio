@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Award, Download, X } from "lucide-react";
 import * as DATA from "../data/portfoliodata";
 

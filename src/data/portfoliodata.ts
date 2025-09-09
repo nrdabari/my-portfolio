@@ -16,6 +16,7 @@ export type Experience = {
   end: string;
   bullets: string[];
 };
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type SkillCategory = { name: string; items: any[] };
 export type Certificate = {
   title: string;
