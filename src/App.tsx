@@ -246,7 +246,7 @@ export default function App() {
           <div className="justify-self-center">
             <div className="relative w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 rounded-full p-1.5 bg-gradient-to-br from-indigo-400 via-sky-400 to-teal-400">
               <img
-                src="/public/photo.jpg"
+                src="/images/photo.jpg"
                 alt="Portrait of Nikita Dabari"
                 loading="lazy"
                 className="w-full h-full rounded-full object-cover"

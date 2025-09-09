@@ -52,7 +52,7 @@ export const PROJECTS: Project[] = [
       "FFmpeg",
     ],
 
-    image: "public/ai-1.jpg",
+    image: "/images/ai-1.jpg",
     type: "company",
   },
   {
@@ -69,7 +69,7 @@ export const PROJECTS: Project[] = [
       "WebSockets",
       "Chart.js",
     ],
-    image: "public/healthtrack-1.png",
+    image: "/images/healthtrack-1.png",
     type: "company",
   },
   {
@@ -93,7 +93,7 @@ export const PROJECTS: Project[] = [
       { label: "Server", url: "https://github.com/nrdabari/quizChamp-backend" },
     ],
     live: "",
-    image: "public/olympiad-project-1.png",
+    image: "/images/olympiad-project-1.png",
     type: "personal",
   },
 ];
@@ -103,25 +103,25 @@ export const CERTIFICATES: Certificate[] = [
     title: "IBM Java Certification",
     issuer: "IBM",
     date: "2023",
-    image: "public/ibm-java.png",
+    image: "/images/ibm-java.png",
   },
   {
     title: "IBM Python Web Development Certification",
     issuer: "IBM",
     date: "2023",
-    image: "public/ibm-python.png",
+    image: "/images/ibm-python.png",
   },
   {
     title: "React Certification",
     issuer: "NamasteDev.com",
     date: "2022",
-    image: "public/namaste-React.webp",
+    image: "/images/namaste-React.webp",
   },
   {
     title: "SQL Certification",
     issuer: "HackerRank",
     date: "2022",
-    image: "public/HackerRankSQL(Intermediate).png",
+    image: "/images/HackerRankSQL(Intermediate).png",
   },
   //   {
   //     title: "Full-Stack Web Development",
@@ -240,7 +240,7 @@ export const SKILLS: SkillCategory[] = [
       },
       {
         name: "NestJS",
-        logo: "public/nestjs.png",
+        logo: "/images/nestjs.png",
       },
       {
         name: "REST APIs",
@@ -278,7 +278,7 @@ export const SKILLS: SkillCategory[] = [
       },
       {
         name: "OpenAI GPT",
-        logo: "public/chatgpt.png",
+        logo: "/images/chatgpt.png",
       },
     ],
   },
@@ -287,7 +287,7 @@ export const SKILLS: SkillCategory[] = [
     items: [
       {
         name: "AWS (Lambda, RDS, S3, CloudWatch)",
-        logo: "public/aws.png",
+        logo: "/images/aws.png",
       },
       {
         name: "GCP",
